@@ -24,9 +24,6 @@ class DataIngestion:
             raise NetworkSecurityException(e,sys)
         
     def export_collection_as_dataframe(self):
-        """
-        Read data from mongodb
-        """
         try:
             database_name=self.data_ingestion_config.database_name
             collection_name=self.data_ingestion_config.collection_name
@@ -45,7 +42,6 @@ class DataIngestion:
     def export_data_into_feature_store(self,dataframe: pd.DataFrame):
         try:
             feature_store_file_path=self.data_ingestion_config.feature_store_file_path
-            #creating folder
             dir_path = os.path.dirname(feature_store_file_path)
             os.makedirs(dir_path,exist_ok=True)
             dataframe.to_csv(feature_store_file_path,index=False,header=True)

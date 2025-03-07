@@ -56,8 +56,7 @@ class DataValidation:
                     
                     }})
             drift_report_file_path = self.data_validation_config.drift_report_file_path
-
-            #Create directory
+            
             dir_path = os.path.dirname(drift_report_file_path)
             os.makedirs(dir_path,exist_ok=True)
             write_yaml_file(file_path=drift_report_file_path,content=report)
@@ -71,11 +70,8 @@ class DataValidation:
             train_file_path=self.data_ingestion_artifact.trained_file_path
             test_file_path=self.data_ingestion_artifact.test_file_path
 
-            ## read the data from train and test
             train_dataframe=DataValidation.read_data(train_file_path)
             test_dataframe=DataValidation.read_data(test_file_path)
-            
-            ## validate number of columns
 
             status=self.validate_number_of_columns(dataframe=train_dataframe)
             if not status:
@@ -84,7 +80,6 @@ class DataValidation:
             if not status:
                 error_message=f"Test dataframe does not contain all columns.\n"   
 
-            ## lets check datadrift
             status=self.detect_dataset_drift(base_df=train_dataframe,current_df=test_dataframe)
             dir_path=os.path.dirname(self.data_validation_config.valid_train_file_path)
             os.makedirs(dir_path,exist_ok=True)

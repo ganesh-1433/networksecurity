@@ -27,12 +27,7 @@ def write_yaml_file(file_path: str, content: object, replace: bool = False) -> N
     except Exception as e:
         raise NetworkSecurityException(e, sys)
     
-def save_numpy_array_data(file_path: str, array: np.array):
-    """
-    Save numpy array data to file
-    file_path: str location of file to save
-    array: np.array data to save
-    """
+def save_numpy_array_data(file_path: str, array: np.array): 
     try:
         dir_path = os.path.dirname(file_path)
         os.makedirs(dir_path, exist_ok=True)
