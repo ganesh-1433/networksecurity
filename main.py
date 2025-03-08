@@ -8,7 +8,7 @@ from networksecurity.entity.config_entity import TrainingPipelineConfig
 
 from networksecurity.components.model_trainer import ModelTrainer
 from networksecurity.entity.config_entity import ModelTrainerConfig
-        
+import sys     
 if __name__=='__main__':
     try:
         trainingpipelineconfig=TrainingPipelineConfig()
