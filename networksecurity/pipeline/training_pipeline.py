@@ -87,10 +87,7 @@ class TrainingPipeline:
         except Exception as e:
             raise NetworkSecurityException(e, sys)
 
-    ## local artifact is going to s3 bucket    
-   
-        
-    ## local final model is going to s3 bucket 
+
         
     
     

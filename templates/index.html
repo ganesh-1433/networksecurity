@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Security Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            text-align: center;
+            color: white;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+            border-radius: 10px;
+            color: black;
+        }
+        h1 {
+            color: #333;
+        }
+        .upload-section, .train-section {
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            padding: 10px;
+            border: 2px solid #764ba2;
+            border-radius: 5px;
+            background: white;
+            color: black;
+        }
+        .btn {
+            background: #ff5722;
+            color: white;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background: #e64a19;
+        }
+        .result-container {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            color: black;
+        }
+        .question {
+            margin-top: 20px;
+        }
+        .btn-choice {
+            background: #4CAF50;
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn-choice:hover {
+            background: #45a049;
+        }
+        .btn-no {
+            background: #f44336;
+        }
+        .btn-no:hover {
+            background: #d32f2f;
+        }
+    </style>
+    <script>
+        function toggleTrainModel(value) {
+            let trainSection = document.querySelector('.train-section');
+            if (value === 'yes') {
+                trainSection.style.display = 'block';
+            } else {
+                trainSection.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Network Security Prediction</h1>
+        <div class="question">
+            <p>Do you want to train a model?</p>
+            <button class="btn-choice" onclick="toggleTrainModel('yes')">Yes</button>
+            <button class="btn-choice btn-no" onclick="toggleTrainModel('no')">No</button>
+        </div>
+        <div class="train-section" style="display: none;">
+            <form action="/train" method="get">
+                <button class="btn" type="submit">🚀 Train Model</button>
+            </form>
+        </div>
+        <div class="upload-section">
+            <p>📂 Enter File for Prediction below</p>
+            <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showPrediction()">
+                <input type="file" name="file" required>
+                <button class="btn" type="submit">📊 Upload & Predict</button>
+            </form>
+        </div>
+    </div>
+    <div class="result-container">
+        <h2>Prediction Results</h2>
+        <div id="prediction-output">{{ prediction_result | safe }}</div>
+    </div>
+</body>
+</html>
