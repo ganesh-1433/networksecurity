@@ -10,6 +10,6 @@ pyaml
 dagshub
 fastapi
 uvicorn
-
+tabulate
 
 ##-e .

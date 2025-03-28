@@ -20,19 +20,26 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
         }
+        .table-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: flex-start;
+        }
         table {
-            width: 60% !important;
-            margin: auto;
+            width: 45% !important;
             border-collapse: collapse;
             border-radius: 10px;
             overflow: hidden;
+            background-color: white;
+            color: black;
+            border: 1px solid black;
         }
         th, td {
             text-align: center;
             padding: 12px;
-        }
-        td {
-            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid black;
         }
         .safe {
             color: #27ae60;
@@ -55,17 +62,54 @@
         .btn-custom:hover {
             background-color: #d35400;
         }
+        .summary-table {
+            height: 150px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>📊 Network Security Prediction Results</h2>
         <br>
-        <table>
-            <tbody>
-                {{ last_column | safe }}
-            </tbody>
-        </table>
+        <div class="table-container">
+            <!-- Left Table: Prediction Details -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Predicted Output</th>
+                        <th>Network Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ prediction_table | safe }}
+                </tbody>
+            </table>
+            
+            <!-- Right Table: Summary -->
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Total Records</td>
+                        <td>{{ total_records }}</td>
+                    </tr>
+                    <tr>
+                        <td>Safe Networks</td>
+                        <td class="safe">{{ safe_count }}</td>
+                    </tr>
+                    <tr>
+                        <td>Not Safe Networks</td>
+                        <td class="not-safe">{{ not_safe_count }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <br>
         <a href="/" class="btn btn-custom mt-3">🔄 Go Back</a>
     </div>
