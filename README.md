@@ -74,6 +74,7 @@ This project presents a comprehensive, automated, and scalable network security 
 📬 **Share your story** ([work.ganeshpawar03@gmail.com](mailto:work.ganeshpawar03@gmail.com)) if you're using this repo for your mini or course project. I’d love to know how this project helped you!
 
 
-You Can Conect with on: 
+You Can Connect with on: 
+
 🔗 [LinkedIn](https://www.linkedin.com/in/ganesh-pawar143)
 💻 [GitHub](https://github.com/ganesh-1433)
