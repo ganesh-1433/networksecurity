@@ -7,12 +7,12 @@ This project presents a comprehensive, automated, and scalable network security 
 
 ## 🔧 Tech Stack
 
-**Frontend**: HTML5, CSS3, JavaScript
-**Backend**: Python, FastAPI, Uvicorn
-**Database**: MongoDB Atlas (NoSQL)
-**ML Tools**: Scikit-learn, NumPy, Pandas, MLflow
-**DevOps**: Docker, Dagshub, GitHub
-**Dataset**: Phishing dataset with 30 engineered features
+* **Frontend**: HTML5, CSS3, JavaScript
+* **Backend**: Python, FastAPI, Uvicorn
+* **Database**: MongoDB Atlas (NoSQL)
+* **ML Tools**: Scikit-learn, NumPy, Pandas, MLflow
+* **DevOps**: Docker, Dagshub, GitHub
+* **Dataset**: Phishing dataset with 30 engineered features
 
 
 ## 🧱 Project Architecture
