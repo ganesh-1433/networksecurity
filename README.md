@@ -45,18 +45,7 @@ This project presents a comprehensive, automated, and scalable network security 
 
 ## 🚀 Installation
 
-1. **Clone the Repository**
-   `git clone https://github.com/your-username/network-security-etl.git`
-   `cd network-security-etl`
-
-2. **Install Dependencies**
-   `pip install -r requirements.txt`
-
-3. **Start the FastAPI Server**
-   `uvicorn main:app --reload`
-
-4. **Open in Browser**
-   `http://127.0.0.1:8000/docs`
+Contact at ([work.ganeshpawar03@gmail.com](mailto:work.ganeshpawar03@gmail.com)) for installation and giude.
 
 
 ## 📈 Results
